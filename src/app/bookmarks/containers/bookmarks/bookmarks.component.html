@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="bookmarks__heading">Bookmarks app
+    <a [routerLink]="'add'" class="bookmarks__btn" mat-mini-fab color="primary" matTooltip="Add new bookmark">
+      <mat-icon>note_add</mat-icon>
+    </a>
+  </h1>
+  <mat-tab-group class="bookmarks__container" *ngIf="(bookmarks$ | async)?.size; else noValuesTemplate">
+    <ng-container *ngFor="let bookmark of (bookmarks$ | async) | keyvalue; let index = index">
+      <mat-tab [label]="bookmark.key">
+        <ng-container *ngFor="let value of bookmark.value">
+          <app-bookmark [bookmark]="value" (onDelete)="onDeleteItem($event)"></app-bookmark>
+        </ng-container>
+      </mat-tab>
+    </ng-container>
+
+  </mat-tab-group>
+
+  <ng-template #noValuesTemplate>
+    <h4>
+      No items to display
+    </h4>
+  </ng-template>
+</div>

@@ -1,0 +1,17 @@
+.bookmark {
+  margin: 20px;
+  width: 200px;
+  padding-bottom: 25px;
+
+  &__link {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #3f51b5;
+
+    &:hover {
+      background: none;
+    }
+  }
+}

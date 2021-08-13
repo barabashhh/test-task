@@ -1,0 +1,14 @@
+<mat-card class="bookmark" *ngIf="bookmark">
+  <mat-card-header>
+    <mat-card-title>{{bookmark.name}}</mat-card-title>
+    <mat-card-subtitle>{{bookmark.group}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <a class="bookmark__link" [href]="bookmark.url" target="_blank">Link to Website</a>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="deleteItem(bookmark.id)">DELETE</button>
+  </mat-card-actions>
+</mat-card>

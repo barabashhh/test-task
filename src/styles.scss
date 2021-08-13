@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 50px 10px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookmark {
+  .mat-card-header-text {
+    margin: 0;
+  }
+
+  .mat-card-actions {
+    padding: 0 5px;
+  }
+}
+
+.bookmarks {
+  &__container {
+    .mat-tab-body-wrapper {
+      min-height: 400px;
+    }
+
+    .mat-tab-body-content {
+      width: 100%;
+      max-width: 545px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+}
