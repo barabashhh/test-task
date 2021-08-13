@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Add new bookmark</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="form">
+    <div class="form__container">
+      <mat-form-field appearance="fill" class="form__field">
+        <mat-label>Enter name of your bookmark</mat-label>
+        <input matInput placeholder="Enter name"  formControlName="name" required>
+        <mat-error *ngIf="name.errors?.required">Field should not be empty</mat-error>
+        <mat-error *ngIf="name.errors?.minlength">Name should be min 3 chars</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form__field">
+        <mat-label>Enter url</mat-label>
+        <input matInput placeholder="Enter url"  formControlName="url" required>
+        <mat-error *ngIf="url.errors?.required">Field should not be empty</mat-error>
+        <mat-error *ngIf="url.errors?.minlength">Name should be min 5 chars</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill"  class="form__field">
+        <mat-label>Select group</mat-label>
+        <mat-select formControlName="group">
+          <mat-option *ngFor="let group of groups" [value]="group">{{group}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="group.errors?.required">Field should not be empty</mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+
+
+</div>
